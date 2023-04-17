@@ -1,0 +1,250 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{CMPSC 360 HW 3}
+\author{UC Choudhary}
+
+\begin{document}
+\maketitle
+
+
+
+\section{Use rules of inference to draw conclusions given the following sets of premises. State the inferences rules you use.}
+
+
+\Large (a) ”If you harvest crops in the fall, then you planted seeds in the spring.” ”If you do not
+harvest crops in the fall, then an early frost killed all your crops.” ”There was no early frost.”\\
+
+Ans(a)\\
+ p = Harvest crops in the fall\\
+ q = planted seeds in the spring\\
+ $\neg p = $Do not harvest crops in the fall\\
+ r = Early frost will kill your crops\\
+ 
+ Assumptions/Premises:\\
+ 1. $p \rightarrow q$\\
+ 2. $\neg p \rightarrow r$\\
+ 3. $\neg r$\\
+
+ Proof:\\
+ 1. From (1) and (2) by Modus Ponens we have q\\
+ 2. From (3) and (4) by Modus Tollens $\neg r$ we have p\\
+ 3. From this we have $p \rightarrow q$ is True\\
+ 4. From this we can prove that:\\
+ 
+ Conclusion You harvested crops in the fall and you planted seeds in the spring.\\
+
+ \Large (b) ”If your spacecraft is in geostationary orbit around the Earth, then your spacecraft is above
+the equator and at an altitude of about 22,200 miles” ”Your spacecraft is at an altitude of
+5000 miles”.\\
+
+Ans(b)\\
+p = spacecraft is in geostationary orbit around the Earth\\
+q = spacecraft is above the equator\\
+r = Altitude of 22000 miles\\
+$\neg r =$ Altitude is 5000 miles\\
+
+ Assumptions/Premises:\\
+ 1. $p \rightarrow (q \land r)$\\
+ 2. $\neg r$\\
+
+ Proof:\\
+ 1. From (2), we can conclude that $\neg (q \land r) $ is true.\\
+ 2. Since $\neg (q \land r) $ is true by using (1) and Modus Tollens $\neg p$ is true\\
+
+ Conclusion: Since the altitude of the spacecraft is 5000 miles, your spacecraft is not above the equator and not in geostationary orbit.\\
+
+ \Large (c) ”If today is not a weekday, then it is Saturday or Sunday” ”It is not a weekday” ”It is not Sunday”.\\
+ 
+Ans(c)\\
+p = today is not a weekday\\
+q = It is Saturday\\
+r = It is Sunday\\
+
+ Assumptions/Premises:\\
+ 1. $p \rightarrow (q \lor r)$\\
+ 2. p\\
+ 3. $\neg r$\\
+
+ Proof:\\
+ 1. From (1) and (2), since p is true by Modus Ponens $q \lor r$ is true\\
+ 2. From (3), $\neg r$ is True \\
+ 3. Since $q \lor r$ is true, and r is False q is True
+
+ Conclusion: It is Saturday, today.\\
+
+\Large (d) ”If it rains, then I will skip class” ”If it is too cold, then I will skip class” ”It is always either rainy or cold”.\\
+ 
+Ans(d)\\
+p = It rains\\
+q = It is cold\\
+r = I will skip class\\
+
+ Assumptions/Premises:\\
+ 1. $p \rightarrow r$\\
+ 2. $q \rightarrow r$\\
+ 3. p\\
+ 4. q\\
+
+ Proof:\\
+ 1. From (1) and (3), since p is true by Modus Ponens r is true\\
+ 2. From (2) and (4), since q is true by Modus Ponens r is true\\
+
+
+ Conclusion: I will skip class.\\
+
+ \section{Show that the following arguments are valid using rules of inference. ⊢ is used for horizontal
+record of arguments: statements to the left of ⊢ are premises and statement to the right of ⊢ is
+a conclusion.}
+
+\Large (a) $p \rightarrow q, q \rightarrow (r \land s), \neg r \lor (\neg w \lor u), p \land w \vdash u$\\
+
+Assumptions/Premises:\\
+1. $p \rightarrow q$\\
+2. $q \rightarrow (r \land s)$\\
+3. $ \neg r \lor (\neg w \lor u)$\\
+4. $p \land w \vdash u$
+
+We can convert (3) to $r \rightarrow (\neg w \lor u)$ 
+Also by Hypothetical Syllogism we can combine (1) and (2) as follows:\\
+$p \rightarrow (r \land s)$\\
+This shows that $(r \land s)$ is true r and s are true.
+For (3) we know that $\neg r $ is false. This shows that $(\neg w \lor u)$ is true.\\
+From (4) we know that w is true. This shows that $\neg w $ is false. Hence u is true. 
+\\
+I did not make a formal proof structure because it was not specified in the question.
+\\
+
+\Large (b) $(\neg p \lor \neg q) \rightarrow (r \land s), r \rightarrow w, \neg w \vdash p$
+\\
+
+Assumptions/Premises:\\
+1. $(\neg p \lor \neg q) \rightarrow (r \land s)$\\
+2. $r \rightarrow w$\\
+3. $ \neg w $\\
+
+By Modus Tollens, from (3) we get $\neg r$\\
+Substituting $\neg r $ in (1), from Modus Tollens, we get $\neg(\neg p \lor \neg q) $ is True \\
+If we simplify the expression, we get $p \land q$ is True\\
+This shows that p and q are true.\\
+
+\Large (c)$p \iff q, q \rightarrow r, r \vdash p$\\
+Assumptions/Premises:\\
+1. $\neg p \iff q$\\
+2. $q \rightarrow r$\\
+3. $\neg r$\\
+
+By Modus Tollens from (3), we get q is false.\\
+We know by definition of bidirectional $\neg p \iff q$ is $(\neg p \rightarrow q) \land (q \rightarrow \neg p )$
+Since $(q \rightarrow \neg p )$ is true and q is false. $\neg p$ is false.\\
+This shows that p is true.\\
+
+\Large (d) $u \rightarrow r, (r \land s) \rightarrow (p \lor w), q \rightarrow (u \land s), \neg w \vdash q \rightarrow p$\\
+Assumptions/Premises:\\
+1. $u \rightarrow r$\\
+2. $(r \land s) \rightarrow (p \lor w)$\\
+3. $q \rightarrow (u \land s)$\\
+4. $\neg w$\\
+We know that,
+$(r \land s) \rightarrow (p \lor w)$ is true\\
+$\neg (r \land s) \lor (p)$ is true\\
+Since u implies r we can and both sides with s, then by hypothetical syllogism,\\
+$q \rightarrow p$
+Hence it is provable by logic.
+\\
+
+\section{Find an error in the following proof and explain why it is an error.}
+
+\Large (a) Proving $P(x) \vdash \forall xP(x)$\\
+(1) P(x) - premise\\
+(2) $\forall xP(x)$ - universal generalization\\
+
+Ans(a) In this problem, the domain of x is unspecified, unless P(x) is a tautology, we cannot generalize P(x) also x is a free variable in one of the premises.
+\\
+
+\Large (b) Proving $\exists xP(x) \vdash \forall yP(y)$
+(1) $\exists xP(x)$ - premise\\
+(2) P(y) - existential instantiation (y in a new free variable name)\\
+(3) $\forall yP(y)$ - universal generalization\\
+
+Ans (b) In the second premise y is a free variable and cannot be generalized as done in (3).
+\\
+
+\Large (c) $Proving \forall x(P(x)\rightarrow Q(x)), \exists x(P(x)\land R(x)) \vdash \exists x(R(x)\land Q(x))$\\
+(1) $ \forall x(P(x) \rightarrow Q(x))$ - premise\\
+(2) $P(c)\rightarrow Q(c)$ - universal instantiation (c is a constant)\\
+(3) $ \exists x(P(x)\land R(x))$ - premise\\
+(4) $P(c)\land R(c)$ - existential instantiation\\
+(5) P(c) - conjunction elimination\\
+(6) Q(c) - modus ponens for (2) and (5)\\
+(7) R(c) - conjunction elimination for (4)\\
+(8) $R(c)\land Q(c)$ - conjunction introduction for (6) and (7)\\
+(9) $\exists x(R(x)\land Q(x))$ - existential generalization
+\\
+There is a mistake in the existential instantiation in step (4), c is not specified as a constant for that step.
+\\
+
+\section{Prove the following claims using direct proof. Before beginning your proof, state the assumptions
+given, and state the conclusion you must prove.}
+
+\Large (a) For any set of three integers x,y, z, if x divides y and y divides z, then x divides z.\\
+
+Let x, y, and z be any set of three integers such that x divides y and y divides z. By property of integer division, this means that there exists an integer k such that y = kx and another integer m such that z = my.\\
+
+Substituting the first equation into the second, we get z = my = mkx. Therefore, x divides z.\\
+
+Hence, the statement "if x divides y and y divides z, then x divides z" is a tautology for $x,y,z \in \mathbf{Z}$\\
+
+\Large (b) 
+Consider the product xy. It can be written as (2m + 1)(2n + 1) since odd numbers, for some integers m and n, where (2m + 1) represents x and (2n + 1) represents y. Expanding the product, we get:\\
+
+xy = (2m + 1)(2n + 1) = 2(2mn) + 2m + 2n + 1\\
+
+Since 2mn is an even integer, the product xy is equal to an even integer plus an odd integer plus another odd integer plus 1, which is also an odd integer. This shows that there is always a remainder of 1 when we divide by 2. Hence, xy is an odd integer.\\
+
+Therefore, the statement "if x and y are odd, then xy is odd" is a tautology.\\
+
+\section{Prove or disprove that the hypotheses could lead to the conclusion: $\forall x (R(x)\rightarrow S(x))$
+Also, specify all inference rules used in the proof.}
+
+\Large Assumptions/Premises:
+
+(i) $\forall x (Q(x)\rightarrow \neg S(x))$\\
+(ii) $\exists x (Q(x)\land P(x))$\\
+(iii) $\forall x (P(x)\rightarrow R(x))$\\
+
+Ans (5)
+\\
+(1) $\exists x (Q(x)\land P(x))$ - premise\\ 
+(2) P(x) - conjunction elimination of (1)\\
+(3) R(x) -Modus Ponens Premise(iii) and (2)\\
+(4) Q(x) - conjunction elimination of (1)\\
+(5) $\neg S(x)$ - Modus Ponens Premise(i) and (4)\\
+(6) $ R(x) \land \neg S(x)$ -Conjunction (3) and (5)
+
+If both R(x) and $\neg S(x)$ hold for some x, then $\forall x (R(x)\rightarrow S(x))$ is impossible because there is at least one element x for which $\forall x (R(x)\rightarrow S(x))$ is not true.
+Thus we have disproved the given statement
+
+ 
+ 
+
+
+
+ 
+ 
+
+
+
+\end{document}
