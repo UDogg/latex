@@ -1,0 +1,146 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{CMPSC 360 HW 8}
+\author{UC Choudhary}
+
+\begin{document}
+\maketitle
+
+\hline
+\section{Assuming that $\frac{P(2n-1,n)}{P(2n+1,n-1)} = \frac{22}{7}$ find n}
+\large Let P(2n-1,n) = 22k\\
+\large Let P(2n+1, n-1) = 7k\\
+\large 22k = P(2n-1,n) = $\frac{2n-1!}{n-1!}$\\
+$\implies 22k = \frac{(2n-1)*(2n-1)...*(2n-n)*(n-1)!}{(n-1)!}$\\
+Cancelling the n-1! from the numerator and the denominator\\
+22k = (2n-1)(2n-2)...(n)\\
+
+\large 7k = P(2n+1, n-1) = $\frac{(2n+1)!}{(n+2)!}$
+\\
+7k = (2n+1)*(2n)*(2n-1)...(n+3)\\
+
+$22/7 = \frac{(2n-1)*(2n-1)...(2n-(n-3))*(n+2)*(n+1)*n}{(2n+1)*(2n)*(2n-1)...(2n-(n-3))}$\\
+Cancelling (2n-1)...(2n-(n-3))\\
+$\frac{22}{7} = \frac{(n+2)*(n+1)*(n)}{(2n+1)*(2n)}$\\
+$\frac{22}{7} = \frac{(n^2 + 3n + 2)}{(4n+2)}$\\
+Cross multiplying\\
+$7n^2 - 67n - 30 = 0$
+Assuming n is a whole number.
+\\n = 10
+\hline
+
+\section{How many natural numbers not exceeding 150 are divisible either by 3 or by 5 or both?}
+To find the number of natural numbers not exceeding 150 that are divisible by 3 or 5 or both, we can use the principle of inclusion-exclusion.\\
+$|A \cup B| = |A| + |B| - |A\cap B|$\\
+The number of natural numbers not exceeding 150 that are divisible by 3 is:
+150/3 = 50\\
+The number of natural numbers not exceeding 150 that are divisible by 5 is:
+150/5 = 30\\
+However, some numbers are counted twice since they are divisible by both 3 and 5. To find the number of natural numbers not exceeding 150 that are divisible by both 3 and 5, we need to find the number of multiples of the least common multiple (LCM) of 3 and 5, which is 15. The number of natural numbers not exceeding 150 that are divisible by 15 is:
+150/15 = 10\\
+Therefore, the number of natural numbers not exceeding 150 that are divisible either by 3 or by 5 or both is:
+50 + 30 - 10 = 70\\
+So there are 70 natural numbers not exceeding 150 that are divisible either by 3 or by 5 or both.\\
+\hline
+
+\section{Prove that $\sum_{k=0}^{k=n} (n,k) = 2^n$}
+Proof using the Binomial Theorem\\
+NOTE: nCk = $n\choose k$\\
+Binomial Theorem states that:\\
+$(a + b)^n = \sum_{k=0}^{k=n} (n C k) a^(n-k) b^k$\\
+where (n $C$ k) is the binomial coefficient, which represents the number of ways to choose k elements from a set of n elements. In this case, we can set a = b = 1, so that:\\
+
+$(1 + 1)^n = \sum_{k=0}^{k=n} (n C k) 1^(n-k) 1^k$\\
+Simplifying, we get:\\
+$2^n = \sum_{k=0}^{k=n} (n C k)$\\
+
+Now we can substitute k = n/2 in the sum, since the binomial coefficient is symmetric around k = n/2 when n is even. When n is odd, we can ignore the middle term because it will always be an integer, and the other terms will still sum up to $2^n$. So we have:\\
+$(n C n/2) = (n C n/2-1)$\\
+And since $(n C k) = (n C n-k)$, we can write:\\
+$(n C n/2) = (n C n/2+1)$\\
+Therefore:\\
+$\sum_{k=0}^{k=n} (n C k) = (n C 0) + (n C 1) + ... + (n C n/2-1) + 2(n C n/2) + (n C n/2+1) + ... + (n C n)$
+
+$= 2[(n C 0) + (n C 1) + ... + (n C n/2-1) + (n C n/2) + (n C n/2+1) + ... + (n C n)] = 2^n$
+Therefore, we have proven that:\\
+$\sum_{k=0}^{k=n} (n C k) = 2^n$
+And since (n $C$ k) = 0 for k > n, we can also write:\\
+
+$\sum_{k=0}^{k=n} k (n C k) = \sum_{k=0}^{k=n} k (n C k) = n\sum_{k=0}^{k=n} (n-1 C k-1) = n2^(n-1)$\\
+Now we can use this result to prove that k = n in the original equation:\\
+
+$\sum_{k=0}^{k=n} k (n C k) = \sum_{k=0}^{k=n} n (n-1 C k-1) = n\sum_{k=0}^{k=n} (n-1 C k-1) + \sum_{k=0}^{k=n} (n-1 C k-1) = n2^(n-1) + 2^(n-1) = 2^n(n/2) = n\sum_{k=0}^{k=n}) (n C k)$\\
+
+Dividing both sides by $\sum_{k=0}^{k=n} (n C k)$, which is non-zero, we get:\\
+
+$\sum_{k=0}^{k=n}k (n C k) / \sum_{k=0}^{k=n} (n C k) = n$
+Therefore, we have proven that k = n.\\
+\hline
+
+\section{m men and n women prepare for a group photo. They plan to stand in one line in such a way
+that no two women stand together. Assuming that m > n, find the number of different ways to
+do it.}
+First, we need to select a subset of m women from the total of n women. The number of ways to do this is given by the combination formula:\\
+NOTE: C(n,k) = $n \choose k$
+$C(n, m) = \frac{n!}{m!(n-m)!}$\\
+Next, we need to arrange the m men and the selected subset of m women in a line such that no two women stand together. We can arrange the m men in m! ways.\\
+Now, we need to insert the selected subset of m women into the m+1 gaps between the m men or at the two ends of the line. Since there are m+1 gaps and the women cannot stand together, we need to select m gaps for the women to stand in. The number of ways to do this is given by the combination formula:\\
+$C(m+1-m, m) = C(1, m) = 1$\\
+Therefore, the number of ways to arrange the men and women in the line such that no two women stand together is:\\
+C(n, m) * m! * 1 = $\frac{n!}{(n-m)!}$\\
+
+So there are $\frac{n!}{(n-m)!}$ = P(n,m) different ways to arrange m men and n women in a line such that no two women stand together.\\
+\hline
+\section{Find the total number of unique words formed by rearranging the letters of the word
+'CONSTANTINOPLE'.}
+The word 'CONSTANTINOPLE' has 12 letters. To find the total number of unique words formed by rearranging the letters of this word, we can use the formula for the number of permutations of n distinct objects, which is:
+n! = 12!\\
+However, we need to account for the fact that some of the letters are repeated. In this case, there are 2 O's, 2 N's, 2 T's, and 2 I's.\\
+To adjust for the repeated letters, we need to divide by the factorials of the number of repetitions for each letter. Therefore, the total number of unique words formed by rearranging the letters of 'CONSTANTINOPLE' is:\\
+
+$\frac{12!}{2!2!2!2!}$\\
+Simplifying, we get:\\
+
+$\frac{(12 x 11 x 10 x 9 x 8 x 7 x 6 x 5 x 4 x 3 x 2 x 1)}{(2 x 2 x 2 x 2 x 3 x 3 x 5 x 7)}\\ $ = 19,958,400\\
+Therefore, there are 19,958,400 unique words that can be formed by rearranging the letters of 'CONSTANTINOPLE'.\\
+\hline
+
+\section{Find coefficients of $x^0,x^1,x2, . . . ,x^10$ in $(1+x^2+x^5)^{100}$.}
+NOTE: C(n,k) = $n \choose k$
+To calculate the coefficient of $(1+x^2+x^5)^{100}$, we can use the binomial theorem, which states that:
+
+$(1+x)^n = C(n,0) + C(n,1)x + C(n,2)x^2 + ... + C(n,n-1)x^(n-1) + C(n,n)x^n$\\
+C(n,k) = $\frac{n!}{k!(n-k)!}$\\
+We can only get even powers of x from the second term in each expansion, since we are raising $(x^2)$ to odd powers. Similarly, we can only get multiples of 5 from the third term in each expansion, since we are raising $(x^5)$ to integer powers. Therefore, we only need to consider the terms where the exponent of x is either 0, 1, or a multiple of 2 or 5.\\
+Here are the coefficients:\\
+Coefficient of $x^0: C(100,0)1^{100} + C(100,1)1^{99} + C(100,2)1^{98} = 1 + 100 + 4950 = 5051$\\
+
+Coefficient of $x^1: C(100,1)1^{99} (x^2)^1 + 2C(100,3)1^{97} (x^2)^3 + 3C(100,5)1^{95} (x^2)^5 + ... + 50C(100,99)1^1 (x^2)^{99} = 100x^2$\\
+
+Coefficient of $x^2: C(100,2)1^{98} (x^2)^2 + 2C(100,4)1^{96} (x^2)^4 + 3C(100,6)1^{94} (x^2)^6 + ... + 25C(100,98)1^2 (x^2)^{98} = 4950x^4$\\
+
+Coefficient of $x^3: 2C(100,3)1^{97} (x^2)^3 + 4C(100,5)1^{95} (x^2)^5 + 6C(100,7)1^{93} (x^2)^7 + ... + 24C(100,99)1^1 (x^2)^{99} = 117600x^6$\\
+
+Coefficient of $x^4: C(100,4)1^{96} (x^2)^4 + 2C(100,6)1^{94} (x^2)^6 + 3C(100,8)1^{92} (x^2)^8 + ... + 10C(100,98)1^2 (x^2)^{98} = 4167450x^8$\\
+
+Coefficient of $x^5: C(100,1)1^{99} (x^5)^1 + 2C(100,6)1^{94} (x^5)^2 + 3C(100,11)1^{89} (x^5)^3 + ... + 20C(100,96)1^4 (x^5)^20 = 219538500x^{10}$
+As you can see one coefficient leads to another, this is because the expression is a power to a power of x. Hence some powers of x have to be excluded in this process.
+\hline
+
+
+
+
+\end{document}
