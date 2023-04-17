@@ -1,0 +1,211 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{CMPSC 360 HW 5}
+\author{UC Choudhary}
+
+\begin{document}
+\date{}
+\maketitle
+
+
+\section{Let $f: \mathbf{Z^+} \times \mathbf{Z^+} \rightarrow \mathbf{Z^+}$ defined by $f(m,n) = 2^m3^n.$}
+\subsection{(a) What are the domain, codomain, and image of f?}
+\Large Domain: The domain of the function is $\mathbf{Z^+}$.\\
+\Large Codomain: The codomain of the function is $\mathbf{Z^+}$.\\
+\Large Image: $\{x|x = 2^m*3^n$ where $m,n \in \mathbf{Z^+}\}$
+\\
+\subsection{(b) Prove or disprove that f is injective.}
+[To show that a function is injective, we assume that there are elements a1 and a2 of
+A with f(a1) = f(a2) and then show that a1 = a2.]\\
+\\
+Suppose we have two inputs (m1, n1) and (m2, n2) such that:\\
+f(m1, n1) = f(m2, n2)\\
+Then we have:\\
+$2^{m1}*3^{n1} = 2^{m2}*3^{n2}$\\
+Dividing both sides by $2^{m1}*3^{n1}$\\
+$1 = 2^{m2-m1}*3^{n2-n1}$
+The above equation is only possible when m2-m1 = 0 and n2-n1 = 0
+if m2-m1 = 0, m1 = m2 and if n2-n1 = 0, n1 = n2.\\
+
+This shows that if f(m1, n1) = f(m2, n2), then m1 = m2 and n1 = n2.
+
+Therefore, $f: \mathbf{Z^+} \times \mathbf{Z^+} \rightarrow \mathbf{Z^+}$ defined by $f(m,n) = 2^m3^n.$ is injective.
+
+\subsection{(c) Prove or disprove that f is surjective.}
+\Large To prove that a function is surjective, we need to show that every element in the codomain has at least one pre-image in the domain.\\
+
+In this case, the codomain is $\mathbf{Z^+}$ and the function is defined as f(m,n) = $2^m3^n.$
+
+Let k be any positive integer in Z+. We need to find at least one pair (m,n) in $Z^+ \textbf{x} Z^+$ such that f(m,n) = k.
+
+We can write k as k = $2^a3^b$ for some positive integers a and b.
+
+Then, we can set m = a and n = b, so that $f(m,n) = 2^m3^n = 2^a3^b = k.$
+
+Therefore, we have found at least one pre-image (a,b) in the domain for every positive integer k in the codomain.
+
+Since we have shown that every element in the codomain has at least one pre-image in the domain, the function f is surjective.
+
+\section{Find the inverse of the following functions.}
+\subsection{(a) $f:\mathbf{R} \rightarrow \mathbf{R}, f(x) = \frac{(5-x)}{6}$}
+$y = \frac{(5-x)}{6}$\\
+Next, we can solve for x:\\
+
+y = (5-x)/6\\
+
+6y = 5-x\\
+
+x = 5-6y\\
+
+Therefore, the inverse of f(x) is:\\
+$f^{-1}(x) = 5-6x$
+
+Note that we could also simplify this expression to:
+$f^{-1}(x) = -6x + 5$
+
+However, both expressions are equivalent and represent the same inverse function.\\
+\subsection{(b) $f:\mathbf{R} \rightarrow \mathbf{R}, f(x) = \sqrt[3]{x+3} + 6$}
+Isolate the cube root term:\\
+$y - 6 = (x+3)^(1/3)$\\
+Then we can cube both sides:\\
+$(y - 6)^3 = x+3$\\
+Finally, we can solve for x:\\
+$x = (y - 6)^3 - 3$
+Therefore, the inverse of f(x) is:\\
+$f^{-1}(x) = (x - 6)^3 - 3$\\
+This inverse function is defined for all real numbers.\\
+\subsection{(c) $f:\mathbf{R}$ \textbackslash $\{ -2 \} \rightarrow \mathbf{R}$ \textbackslash $\{ 1 \}, f(x) = \frac{x+4}{x+2}$}
+$y = (x+4)/(x+2)$\\
+Next, we can cross-multiply to get rid of the fraction:\\
+$y(x+2) = x+4$\\
+Distribute y:\\
+$yx + 2y = x + 4$\\
+Grouping the x-terms on one side and the y-terms on the other:\\
+yx - x = 4 - 2y\\
+Factor out the x on the left side:\\
+x(y - 1) = 4 - 2y\\
+Divide both sides by (y-1):\\
+x = (4 - 2y) / (y - 1)\\
+Therefore, the inverse of f(x) is:\\
+$f^{-1}(x) = \frac{(4 - 2x)}{(x - 1)}$\\
+Note that f(x) is not defined at x = -2, so its domain excludes that value. Similarly, the inverse function $f^{-1}(x)$ is not defined at x = 1, so its domain excludes that value.\\
+
+\subsection{(d) $f:\mathbf{R_0^{+}} \rightarrow (\infty,4] , f(x) = 4- 6x^8$}
+
+$y = 4 - 6(x^8)$\\
+Isolate the term containing x:\\
+$6(x^8) = 4 - y$\\
+Divide both sides by 6:\\
+$(x^8) = (4 - y)/6$\\
+Take the eighth root of both sides:\\
+$x = ((4 - y)/6)^(1/8)$\\
+Therefore, the inverse of f(x) is:\\
+$f^{-1}(x) = \sqrt[8]{(\frac{(4 - x)}{6})}$\\
+
+The domain of f(x) is non-negative real numbers, which includes zero, but the range of f(x) is the closed interval from negative infinity to 4, which does not include any positive numbers. This means that the domain of the inverse function $f^{-1}(x)$ is also the closed interval from negative infinity to 4, which does not include any positive numbers.\\
+
+If the domain would include negative numbers the function could not be inverted since it would not be one-to-one but since the domain only has positive number we can invert this function.
+
+\section{Find the following for the piecewise function given below}
+$f : (−16,−4)\cup[4,\infty) \rightarrow \mathbf{R}$\\
+\begin{equation}
+f(x) = 
+{
+\left\{
+    \begin{array}
+        -x^2 \hspace{4} \text{if } x \geq 0\\
+        \frac{x}{2} \hspace{4} \text{if } x<0
+    \end{array}
+\end{equation}
+
+\subsection{(a) Find the domain of f .}
+The domain of the given function is $(-16,\infty)$
+\subsection{(b) Find the codomain of f .}
+The codomain of the given function is all real numbers $\mathbf{R}$
+\subsection{(c) Find the image of f .}
+The image of f is all real numbers $\mathbf{R}$
+\subsection{(d) Prove or disprove that f is injective.}
+Let f(a) = f(b) for some a and b\\
+Let a<0 and b<0\\
+f(a) = $a/2$\\
+f(b) = $b/2$\\
+a/2 = b/2\\
+a = b\\
+Therefore f is injective\\
+
+\subsection{(e) Prove or disprove that f is surjective.}
+Let k be any negative number in $\mathbf{R}$
+if k<-32, K does not have a preimage in the given domain. Hence f is not surjective for the given codomain.
+
+\section{Among 50 patients admitted to a clinic, 25 are diagnosed with pneumonia, 30 with bronchitis,
+and 10 with both pneumonia and bronchitis. Determine the number of patients with pneumonia
+or bronchitis (or both).}
+To determine the number of patients with pneumonia or bronchitis (or both), we need to use the principle of inclusion-exclusion.\\
+
+Let P denote the set of patients with pneumonia, and B denote the set of patients with bronchitis. Then we can represent the number of patients with pneumonia or bronchitis (or both) as:\\
+
+$|P \cup B| = |P| + |B| - |P \cap B|$\\
+
+Here, |P| represents the number of patients with pneumonia, |B| represents the number of patients with bronchitis, and $|P \cap B|$ represents the number of patients with both pneumonia and bronchitis.\\
+
+We are given that:\\
+
+$|P| = 25\\
+
+$|B| = 30$\\
+
+$|P \cap B| = 10$\\
+
+Substituting these values into the formula, we get:\\
+
+$|P \cup B| = 25 + 30 - 10 = 45$\\
+
+Therefore, there are 45 patients with pneumonia or bronchitis (or both).\\
+\section{The alphabet of an ancient tribe consists of 5 vowels and 6 consonants. In their language, no
+word can have 2 consecutive vowels or 2 consecutive consonants. What is the largest possible
+number of different 7-letter words in the tribe’s language?}
+
+To find the largest possible number of different 7-letter words in the tribe's language, we can use a counting argument based on the idea of constructing the words from their constituent vowels and consonants.\\
+
+First, let's consider the number of ways to select the vowels for a 7-letter word. Since no word can have two consecutive vowels, we can alternate between consonants and vowels, starting and ending with a consonant. We can choose any of the 6 consonants for the first letter, and then any of the 5 vowels for the second letter, any of the 6 consonants for the third letter, and so on. This gives us:\\
+
+6 × 5 × 6 × 5 × 6 × 5 × 6 = 27,000\\
+
+possible sequences of alternating consonants and vowels.\\
+
+Next, we need to insert the consonants and vowels into the sequence in such a way that there are no two consecutive consonants or vowels. To do this, we can use the following approach:\\
+
+1. Start with the sequence of alternating consonants and vowels.
+\\
+
+2. For each consecutive pair of consonants, insert a vowel between them. There are 6 places where we can insert a vowel in this way.
+\\
+
+3. For each consecutive pair of vowels, insert a consonant between them. There are 5 places where we can insert a consonant in this way.\\
+
+For example, if we start with the alternating sequence "BCVCVCV", we can insert a vowel between the first two consonants to get "BVCVCVCV", and then insert a vowel between the second and third consonants to get "BVCCVCVCV", and so on.\\
+
+Using this approach, we can transform each of the 27,000 sequences of alternating consonants and vowels into a unique 7-letter word in the tribe's language. Therefore, the largest possible number of different 7-letter words in the tribe's language is 27,000.\\
+
+
+
+
+
+
+
+
+
+\end{document}
