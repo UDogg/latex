@@ -1,0 +1,159 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{CMPSC 360 HW 4}
+\author{UC Choudhary}
+
+\begin{document}
+\maketitle
+
+
+
+\section{Prove that for all real numbers x and y, if x+y $\geq$ 2, then either x $\geq$ 1 or y $\geq$ 1.}
+
+\Large I will use a proof by contradiction for this proof.
+Suppose that x and y are real numbers such that $x + y \leq 2$ and $x < 1$ and $y < 1.$ We want to prove that either $x \geq 1$ or $y \geq 1$.
+\\
+
+\Large Proof by contradiction:\\
+Assume that both x and y are less than 1. Then, $0 < x < 1$ and $0 < y < 1.$ Adding these inequalities, we get:
+$0 < (x + y) < 2.$\\
+\Large This contradicts the premise that (x + y) $\geq$ 2, thus our assumption that both x and y are less than 1 must be false.\\
+Therefore, either $x \geq 1$ or $y \geq 1.$\\
+
+
+\section{Consider the following theorem: "For an integer n, if n is odd, then $n^3$ is odd."}
+\subsection{Verify that the theorem is true using direct proof.}
+\Large Let n be an odd integer. Then, we can write n as 2k + 1 for some integer k. Now, we can find $n^3$ as follows:\\
+
+\Large $n^3 = (2k + 1)^3 = 8k^3 + 12k^2 + 6k + 1$\\
+
+\Large Since k is an integer, all the terms on the right-hand side are integers, and the last term is 1, which is odd. We can see that they are odd because 2 is not a factor of the RHS.\\
+\Large Hence, $n^3$ is also odd.\\
+
+\Large Therefore, we have proven that for any odd integer n, $n^3$ is also odd.\\
+\subsection{Prove the Converse of the theorem.}
+\Large To prove the converse of the theorem, we want to show that "If $n^3$ is odd, then n is odd."\\
+
+\Large Suppose that $n^3$ is odd. Then, $n^3 = 2m + 1$ for some integer m.\\
+
+Taking the cubic root of both sides, we get:
+
+$n = \sqrt[3](2m + 1)$
+
+Since n is an integer, it follows that $\sqrt[3](2m + 1)$ must also be an integer. Since the cube root of an odd number is always odd, it follows that n must be odd.
+
+Therefore, we have proven that if $n^3$ is odd, then n is odd.
+\\
+
+\section{Prove or Disprove the following statements:}
+\subsection{For any two different rational numbers, there’s another rational number strictly between
+them.}
+\Large Given statement: "For any two different rational numbers, there’s another rational number strictly between
+them."
+\\
+\Large Let x and y be two different rational numbers. Then, $x < y$. Without loss of generality, we can assume that x and y are in their lowest terms and have no common denominator. \\
+Let $z = (x + y)/n$, where $n\in \mathbf{N}$  $ n<<\infty$ then z is a rational number. Since $x < z < y, z$ is strictly between x and y.\\
+
+\subsection{The product of two irrational numbers is an irrational number.}
+\Large Given statement: "The product of two irrational numbers is an irrational number."
+\\
+\Large Let a and b be two irrational numbers. Suppose, for the sake of contradiction, that the product of a and b, $a * b$, is rational.\\
+\Large Then, there exist integers p and q such that$$ a * b = p/q$$ and gcd(p,q) = 1, where gcd is the greatest common divisor.\\
+\Large However, since a and b are irrational, neither a = p/q nor b = p/q, which contradicts the fact that a * b = p/q. Therefore, the product of two irrational numbers must be irrational.\\
+
+\subsection{For real numbers a and b, if a > b then $a^2 > b^2$}
+\Large This is most easily disproven by contradiction.
+\\
+\Large For any $(x,y) \in \mathbf{R}$ where $0<y<x<1$ the given statement is false.\\
+\Large Let us choose x = 5 and y = -5 to illustrate the contradiction\\
+\Large For this y<x but $y^2=x^2$ since  which is a contradiction\\
+\Large Hence we can disprove the given statement
+\\
+\subsection{For every non-zero real number x, if x is irrational, then 2x+1 is also irrational.}
+\Large Given statement: For every non-zero real number x, if x is irrational, then 2x+1 is also irrational.\\
+\Large Using the method of proof by contradiction, let us prove that\\
+$\exists x \in \mathbf{R}$ $ x^2 \notin \mathbf{Q} \implies x \notin \mathbf{Q}$ where $\mathbf{Q}$: Rational Numbers\\
+\Large If x is rational, then we can represent it the next way:
+\\
+x = \(\frac{p}{q}\), $p\in \mathbf{Z}$, $q \in \mathbf{N}$
+\\Squaring both sides
+\Large $x^2 = \frac{p^2}{q^2}$
+\\
+But $p^2\in \mathbf{Z}$ and $q^2 \in \mathbf{N}$
+Let m = $p^2\in \mathbf{Z}$ and n = $q^2 \in \mathbf{N}$
+$\implies x^2 = \frac{m}{n}$ where m,n $\in \mathbf{Z}$
+\\ This shows that $x^2 \in \mathbf{Q}$ by definition
+This statement contradicts our assumption that  $x^2$ is irrational. Therefore, such  $x^2$ doesn't exist and we have disproved the contradiction we have proved the statement.
+\\
+
+\section{Prove or disprove the following statements:}
+\subsection{Sum of two rational numbers cannot be irrational.}
+\Large This is most easily proved by direct proof.
+Let there be two rational numbers $ x = \frac{p}{q}, y = \frac{m}{n}$
+Assuming gcd(p,q,m,n) = 1 \\
+\Large $x + y = \frac{pn + qm}{mn}$
+\\
+\Large By definition of rational numbers, the following are rational numbers:
+(1)$p,q,m,n \in \mathbf{Z} \in \mathbf{Q}$\\
+(2)$(pn + qn) and (mn) \in \mathbf{Q} $ by closure property of rational numbers\\
+(3)$(pn+qn)/(mn) \in \mathbf{Q})$ by closure property of rational numbers
+Hence the sum of two rational numbers is always a rational number.\\
+
+\subsection{Sum of two different irrational numbers is irrational.}
+\Large This is most easily disproved using a counterexample. \\
+Let a and b be two irrational numbers where $a = 2+sqrt(3)$ and $b = 2-sqrt(3)$\\
+We can see that a and b are two completely different irrational numbers but when we add these two irrational numbers a+b = 4, and 4 is a rational numbers. This is also true for any b = -a where a+b=0, and 0 is a rational number.\\
+This is not a formal proof but it holds for all possible conditions of a = -b.
+\\
+\subsection{$\forall a \in \mathbf{R} - $ {0} , $a \in \mathbf{Q} \iff 1/a \in \mathbf{Q}$}
+
+
+\Large The simplest way to prove this is by direct proof.
+\\
+\Large Let $a \in \mathbf{Q} , \exists (p,q)$ such that $a = \frac{p}{q},(p,q) \in \mathbf{Z}$\\
+If p/q is rational then q/p is also rational because q and p are integers and their quotient is a rational number.\\
+\Large Conversely, for 1/a, Let $1/a \in \mathbf{Q} , \exists (m,n)$ such that $a = \frac{m}{n},(m,n) \in \mathbf{Z}$\\
+If m/n is rational then m/n is also rational because m and n are integers and their quotient is a rational number.\\
+This statement is true.\\
+
+\section{Prove $\sqrt[3]{2}$ is irrational.}
+\Large The proof that the cubic root of 2 is irrational can be shown using contradiction.
+Let us assume $\sqrt[3]{2}$, is rational. Then, there exist integers m and n such that $\sqrt[3]{2}$= m/n and gcd(m,n) = 1.\\
+Cubing both sides of the equation $\sqrt[3]{2}$= m/n , we get:\\
+$\sqrt[3]{2} = \frac{m^3}{n^3}$\\
+Multiplying both sides by $n^3$ we get:\\
+$2n^3 = m^3$\\
+Since $m^3$ is an integer, it follows that $n^3$ must also be an integer, which means that n is an integer. However, this contradicts the assumption that gcd(m,n) = 1, since n is a factor of $m^3$.\\
+Therefore, our assumption that $\sqrt[3]{2}$ is rational must be false, and it follows that $\sqrt[3]{2}$ is irrational.\\
+
+
+\section{Prove that if u is an odd integer, then $x^2 +x − u = 0$ has no integer solution.}
+\Large The proof that if u is an odd integer, then $x^2 +x − u = 0$ has no integer solution can be shown using contradiction.\\
+
+\Large Suppose, for the sake of contradiction, that $x^2 +x − u = 0$ has an integer solution x. Then, x must satisfy the equation $x^2 + x = u$, which implies that $(x+ \frac{1}{2})^2 = x^2 + x + \frac{1}{4} = (u + \frac{1}{4})$.\\
+
+\Large Since $(x + \frac{1}{2})^2$ is a perfect square, it follows that $x + 1/2$ is rational. But this contradicts the assumption that x is an integer, since $x + 1/2$ cannot be an integer if x is an integer.\\
+
+\Large Therefore, our assumption that $x^2 +x − u = 0$ has an integer solution must be false, and it follows that  $x^2 +x − u = 0$ has no integer solution if u is an odd integer.\\
+
+
+
+
+
+
+\end{document}
+
+
